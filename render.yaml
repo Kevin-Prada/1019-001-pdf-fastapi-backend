@@ -1,0 +1,19 @@
+services:
+  - type: web
+    name: pdf-fastapi-backend
+    env: python
+    buildCommand: pip install -r requirements.txt
+    startCommand: uvicorn main:app --host 0.0.0.0 --port $PORT
+    envVars:
+      - key: DATABASE_USER
+        value: neondb_owner
+      - key: DATABASE_PASSWORD
+        value: npg_d5jVEZOqr4nw
+      - key: DATABASE_HOST
+        value: ep-plain-mode-a8tq1tu6-pooler.eastus2.azure.neon.tech
+      - key: DATABASE_PORT
+        value: 5432
+      - key: DATABASE_NAME
+        value: neondb
+      - key: CLOUDINARY_URL
+        value: cloudinary://175786421248115:LvO2ZGWpKMNzuVXrmcMgyC_HlPk@dyje6aftb
